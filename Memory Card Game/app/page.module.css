@@ -1,0 +1,364 @@
+.main {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.titleGradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(20deg);
+    }
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Stats Container */
+.statsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.statCard {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
+}
+
+.statIcon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* Difficulty Selector */
+.difficultyContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.difficultyBtn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+}
+
+.difficultyBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.difficultyBtn.active {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-color: var(--primary-light);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Game Board */
+.gameBoard {
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto 2rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.gameBoard.easy {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 600px;
+}
+
+.gameBoard.medium {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 700px;
+}
+
+.gameBoard.hard {
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 900px;
+}
+
+/* Reset Button */
+.resetBtn {
+    display: block;
+    margin: 0 auto;
+    min-width: 200px;
+    font-size: 1.1rem;
+}
+
+/* Win Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+    max-width: 500px;
+    width: 90%;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    animation: modalSlideUp 0.4s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modalContent {
+    text-align: center;
+}
+
+.winIcon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: winIconBounce 0.6s ease-out;
+}
+
+@keyframes winIconBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2) rotate(-10deg);
+    }
+
+    50% {
+        transform: scale(0.9) rotate(10deg);
+    }
+
+    75% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+}
+
+.winTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.winMessage {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.winStats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.winStat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.winStatLabel {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.winStatValue {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.playAgainBtn {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main {
+        padding: 1rem 0.5rem;
+    }
+
+    .statsContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .statCard {
+        padding: 1rem;
+    }
+
+    .statIcon {
+        font-size: 1.5rem;
+    }
+
+    .statValue {
+        font-size: 1.5rem;
+    }
+
+    .statLabel {
+        font-size: 0.75rem;
+    }
+
+    .gameBoard {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .gameBoard.easy {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gameBoard.medium {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gameBoard.hard {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .difficultyContainer {
+        gap: 0.5rem;
+    }
+
+    .difficultyBtn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .modal {
+        padding: 2rem 1.5rem;
+    }
+
+    .winIcon {
+        font-size: 4rem;
+    }
+
+    .winTitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gameBoard.easy {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gameBoard.medium {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gameBoard.hard {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .difficultyBtn {
+        flex: 1;
+        min-width: 100px;
+    }
+}
