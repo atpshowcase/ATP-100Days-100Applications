@@ -1,0 +1,11 @@
+.bird {
+    position: absolute;
+    left: 50px;
+    /* Fixed horizontal position */
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    transition: transform 0.1s linear;
+    /* Smooth rotation */
+}

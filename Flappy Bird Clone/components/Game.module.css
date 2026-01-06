@@ -1,0 +1,86 @@
+.container {
+  width: 100%;
+  max-width: 400px; /* Mobile width */
+  height: 600px;
+  background-color: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 1px solid #333;
+  font-family: 'Inter', sans-serif;
+  user-select: none;
+}
+
+.scoreBoard {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.highScore {
+  font-size: 1rem;
+  color: #888;
+  margin-top: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.menu {
+  text-align: center;
+  color: #fff;
+}
+
+.menu h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.instruction {
+  margin-top: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+}

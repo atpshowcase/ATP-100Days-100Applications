@@ -1,0 +1,12 @@
+.pipeTop {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(90deg, #444, #555 50%, #444);
+    border-bottom: 2px solid #666;
+}
+
+.pipeBottom {
+    position: absolute;
+    background: linear-gradient(90deg, #444, #555 50%, #444);
+    border-top: 2px solid #666;
+}
