@@ -1,0 +1,44 @@
+.cell {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--bingo-cell-size) * 0.4);
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 0.5rem;
+}
+
+.cell:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.active:hover {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+.free {
+    font-size: calc(var(--bingo-cell-size) * 0.25);
+    letter-spacing: 0.05em;
+    color: #fbbf24;
+    /* Amber-400 for FREE text usually distinct, or white */
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+}
+
+.active.free {
+    color: white;
+    text-shadow: none;
+}
