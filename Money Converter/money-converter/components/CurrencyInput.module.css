@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: hsl(var(--foreground));
+    opacity: 0.6;
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.selectGroup {
+    position: relative;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.select {
+    appearance: none;
+    background: transparent;
+    color: white;
+    padding: 1rem 2.5rem 1rem 1rem;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.select option {
+    background: hsl(var(--card));
+    color: white;
+}
+
+.icon {
+    position: absolute;
+    right: 0.75rem;
+    pointer-events: none;
+    width: 1rem;
+    height: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.amountInput {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem;
+    width: 100%;
+    text-align: right;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    -moz-appearance: textfield;
+}
+
+.amountInput::-webkit-outer-spin-button,
+.amountInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.symbol {
+    padding-right: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    user-select: none;
+}
